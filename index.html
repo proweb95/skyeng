@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loop 1 - Step 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="content">
+        <div class="row mobile">
+            <img src="img/device.svg" alt="an image of device">
+            <h2>Mobile</h2>
+            <p>
+                Get notification about new releases in our mobile app.
+            </p>
+            <h3><sup>$</sup><b>10</b>/month</h3>
+        </div>
+        <div class="row desktop">
+            <img src="img/laptop.svg" alt="an image of laptop">
+            <h2>Desktop</h2>
+            <p>
+                Enjoy new episodes on your laptop in browser with our web service, which supports all the platforms.
+            </p>
+            <h3><sup>$</sup><b>15</b>/month</h3>
+        </div>
+        <div class="row tv">
+            <img src="img/monitor.svg" alt="monitor's image">
+            <h2>TV</h2>
+            <p>
+                Watch your favouriteseries at home on large screen with our TV application.
+            </p>
+            <h3><sup>$</sup><b>20</b>/month</h3>
+        </div>
+        <button>Give feedback</button>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="m-content">
+            <h3>Confirmation</h3>
+            <div id="cross">
+                <img src="img/cross.svg" alt="cross">
+            </div>
+
+            <div id="modal-c">
+                
+            </div>
+            <button>Confirm and pay</button>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById('modal');
+        var modalC = document.getElementById('modal-c'); 
+        var cross = document.getElementById('cross');
+        var row0 = document.getElementsByClassName('row')[0];
+        var row1 = document.getElementsByClassName('row')[1];
+        var row2 = document.getElementsByClassName('row')[2];
+
+        row0.onclick = function(){
+            modal.style.display = "block";
+            modalC.innerHTML = row0.innerHTML;
+        }
+        row1.onclick = function(){
+            modal.style.display = "block";
+             modalC.innerHTML = row1.innerHTML;
+        }
+        row2.onclick = function(){
+            modal.style.display = "block";
+             modalC.innerHTML = row2.innerHTML;
+        }
+
+        cross.onclick = function(){
+            modal.style.display = "none";
+        }
+        window.onclick = function(event){
+            if (event.target == modal){
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
